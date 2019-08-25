@@ -4,7 +4,7 @@ view:
             layout_nt:
                 template: "@App/nglayouts/themes/app/layout/layout_nt.html.twig"
                 match:
-                    layout\type: layout_2_without_sidebar
+                    layout\type: layout_nt
         app:
             layout_nt:
                 template: "@App/nglayouts/app/layout/layout_nt.html.twig"
