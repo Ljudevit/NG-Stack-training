@@ -1,0 +1,29 @@
+{% extends '@nglayouts/block/block.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        {% if offset_position is not null %}
+            {% if offset_position == 'left' or offset_position == 'both' %}
+                <div class="col-md-6 col-lg-5 offset-lg-1">
+            {% else %}
+                <div class="col-md-6">
+            {% endif %}
+        {% else %}
+        <div class="col-md-6">
+        {% endif %}
+            {{ nglayouts_render_placeholder(block, 'left') }}
+        </div>
+        {% if offset_position is not null %}
+            {% if offset_position == 'right' or offset_position == 'both' %}
+                <div class="col-md-6 col-lg-5">
+            {% else %}
+                <div class="col-md-6">
+            {% endif %}
+        {% else %}
+        <div class="col-md-6">
+        {% endif %}
+            {{ nglayouts_render_placeholder(block, 'right') }}
+        </div>
+    </div>
+{% endblock %}
+
