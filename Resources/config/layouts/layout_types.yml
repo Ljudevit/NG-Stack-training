@@ -1,0 +1,17 @@
+layout_types:
+    layout_nt:
+        name: 'Layout Netgen training'
+        icon: '/bundles/netgenlayoutsstandard/images/layout_types/layout_2.svg'
+        zones:
+            main_menu:
+                name: 'Main Menu'
+            header:
+                name: 'Header'
+            post_header:
+                name: 'Post header'
+            main:
+                name: 'Main'
+            pre_footer:
+                name: 'Pre footer'
+            footer:
+                name: 'Footer'
