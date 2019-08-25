@@ -11,16 +11,11 @@
 {% endif %}
 
 {% block content %}
-    <article class="view-type view-type-{{ view_type }} nt-speaker vf1">
+    <article class="view-type view-type-{{ view_type }} nt-event vf1">
         {% block article_header %}
             <header class="full-page-header full-article-header">
                 <div class="container">
-                    <h1 class="full-page-title">{{ ng_render_field(content.fields.name) }}</h1>
-                    <div class="full-page-info">
-                        {% if not content.fields.company.empty %}
-                            {{ ng_render_field(content.fields.company) }}
-                        {% endif %}
-                    </div>
+                    <h1 class="full-page-title">{{ ng_render_field(content.fields.title) }}</h1>
                 </div>
             </header>
         {% endblock %}
@@ -31,31 +26,19 @@
 
                 {% block body %}
                     <div class="full-article-body">
-                        <div class="row">
-                        {% if not content.fields.image.empty %}
-                            <div class="col-md-4">
-                                <div class="article-image">
-                                    {{ ng_render_field(content.fields.image) }}
-                                </div>
-                            </div>
-                        {% endif %}
-
                         {% if not content.fields.full_intro.empty %}
-                            <div class="col-md-8">
-                                <div class="article-intro">
-                                    {{ ng_render_field(content.fields.full_intro) }}
-                                </div>
+                            <div class="article-intro">
+                                {{ ng_render_field(content.fields.full_intro) }}
                             </div>
                         {% endif %}
-                        </div>
 
                         {% if not content.fields.body.empty %}
                             {{ ng_render_field(content.fields.body) }}
                         {% endif %}
 
-                        {% set events = ng_query('events') %}
+                        {% set speakers = ng_query('speakers') %}
 
-                        {% if events|length > 0 %}
+                        {% if speakers|length > 0 %}
                             <div class="row">
                                 {% for event in events %}
                                 <div class="col-md-4">
@@ -63,7 +46,7 @@
                                         controller(
                                             'ng_content:viewAction', {
                                                 'contentId': event.id,
-                                                'viewType': 'schedule',
+                                                'viewType': 'circled',
                                                 'layout': false,
                                             }
                                         )
