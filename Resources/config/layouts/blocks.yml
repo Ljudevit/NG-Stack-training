@@ -36,6 +36,10 @@ block_definitions:
                         name: 'Standard (with intro)'
                     overlay:
                         name: 'Overlay'
+                    circled:
+                        name: 'Circled'
+                    schedule:
+                        name: 'Schedule'
             grid_featured:
                 name: 'Grid (featured)'
                 item_view_types:

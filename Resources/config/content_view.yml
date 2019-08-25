@@ -402,6 +402,22 @@ ezpublish:
                     hero:
                         template: "@ezdesign/content/hero.html.twig"
                         match: ~
+                schedule:
+                    nt_event:
+                        template: "@ezdesign/content/schedule/nt_event.html.twig"
+                        match:
+                            Identifier\ContentType: nt_event
+                    schedule:
+                        template: "@ezdesign/content/schedule.html.twig"
+                        match: ~
+                circled:
+                    nt_speaker:
+                        template: "@ezdesign/content/circled/nt_speaker.html.twig"
+                        match:
+                            Identifier\ContentType: nt_event
+                    circled:
+                        template: "@ezdesign/content/circled.html.twig"
+                        match: ~
                 gallery_thumb:
                     ng_article:
                         template: "@ezdesign/content/gallery_thumb/ng_article.html.twig"

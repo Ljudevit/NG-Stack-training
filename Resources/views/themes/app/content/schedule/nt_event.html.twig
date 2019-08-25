@@ -1,0 +1,21 @@
+{% import '@ezdesign/parts/content_fields.html.twig' as content_fields %}
+
+<article class="view-type view-type-{{ view_type }} nt-event vl9">
+
+    <header class="article-header">
+        {% if not content.fields.start_date.empty %}
+            <time>{{ content.fields.start_date.value|date('j M Y') }}</time>
+        {% endif %}
+        <h2 class="title"><a href="{{ path(location) }}">{{ content_fields.title(content) }}</a></h2>
+        <div class="info">
+
+            {% set related_speakers = content.fieldRelations('related_speakers', 10) %}
+            <ul>
+            {% for speaker in related_speakers %}
+                <li><a href="{{ path(speaker.mainLocation) }}" >{{ speaker.name }}</a></li>
+            {% endfor %}
+            </ul>
+            
+        </div>
+    </header>
+</article>
