@@ -40,19 +40,20 @@
 
                         {% if speakers|length > 0 %}
                             <div class="row">
-                                {% for event in events %}
+                                {% for speaker in speakers %}
                                 <div class="col-md-4">
                                     {{ render(
                                         controller(
                                             'ng_content:viewAction', {
-                                                'contentId': event.id,
+                                                'content': speaker,
+                                                'location': speaker.mainLocation,
                                                 'viewType': 'circled',
-                                                'layout': false,
+                                                'layout': false
                                             }
                                         )
                                     ) }}
                                 </div>
-                                {% endif %}
+                                {% endfor %}
                             </div>
                         {% endif %}
 

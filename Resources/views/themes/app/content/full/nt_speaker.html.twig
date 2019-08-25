@@ -62,14 +62,15 @@
                                     {{ render(
                                         controller(
                                             'ng_content:viewAction', {
-                                                'contentId': event.id,
+                                                'content': event,
+                                                'location': event.mainLocation,
                                                 'viewType': 'schedule',
-                                                'layout': false,
+                                                'layout': false
                                             }
                                         )
                                     ) }}
                                 </div>
-                                {% endif %}
+                                {% endfor %}
                             </div>
                         {% endif %}
 

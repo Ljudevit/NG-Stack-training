@@ -440,7 +440,7 @@ ezpublish:
                     nt_speaker:
                         template: "@ezdesign/content/circled/nt_speaker.html.twig"
                         match:
-                            Identifier\ContentType: nt_event
+                            Identifier\ContentType: nt_speaker
                     circled:
                         template: "@ezdesign/content/circled.html.twig"
                         match: ~
