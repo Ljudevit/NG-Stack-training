@@ -4,21 +4,27 @@
 {% set content_link = macros.content_link_parameters(content) %}
 
 {% block content %}
-<article class="view-type view-type-{{ view_type }} ng-banner vl7">
-    <a {{ content_link }} class="image-hero" aria-label="{{ not content.fields.url.empty ? content.fields.url.value.text : content.fields.title.value.text|trim }}">
-        {{ content_fields.image(content) }}
-    </a>
+<article class="view-type view-type-{{ view_type }} ng-banner vl8">
+    <figure class="image-hero">
+        {{ content_fields.image(content, null, 'original') }}
+    </figure>
 
     <header class="article-header">
         <h2 class="title">
-            <a {{ content_link }}>
-                {% if not content.fields.url.empty %}
-                    {{ content.fields.url.value.text }}
-                {% else %}
-                    {{ ng_render_field(content.fields.title) }}
-                {% endif %}
-            </a>
+            {{ ng_render_field(content.fields.title) }}
         </h2>
+
+        <div class="short">
+            {{ ng_render_field(content.fields.short_description) }}
+        </div>
+
+        <a {{ content_link }} class="btn btn-primary">
+            {% if not content.fields.url.empty %}
+                {{ content.fields.url.value.text }}
+            {% else %}
+                Find out more
+            {% endif %}
+        </a>
     </header>
 </article>
 {% endblock %}
