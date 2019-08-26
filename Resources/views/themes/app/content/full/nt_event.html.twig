@@ -16,6 +16,9 @@
             <header class="full-page-header full-article-header">
                 <div class="container">
                     <h1 class="full-page-title">{{ ng_render_field(content.fields.title) }}</h1>
+                    {% if not content.fields.start_date.empty %}
+                        <time>{{ content.fields.start_date.value|date('j M Y') }}</time>
+                    {% endif %}
                 </div>
             </header>
         {% endblock %}
