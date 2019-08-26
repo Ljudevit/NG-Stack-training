@@ -1,31 +1,24 @@
-{% extends nglayouts.pageLayoutTemplate %}
-
-{% block layout %}
-<div class="zone-layout-layout-nt">
-    <section class="zone zone-header">
-        {% nglayouts_render_zone 'header' %}
-    </section>
-    <aside id="aside-section">
-        <section class="zone zone-main_menu">
-            {% nglayouts_render_zone 'main_menu' %}
-        </section>
-    </aside>
-    <div id="main-section">
-        <section class="zone zone-post_header">
-            {% nglayouts_render_zone 'post_header' %}
-        </section>
-
-        <section class="zone zone-main">
-            {% nglayouts_render_zone 'main' %}
-        </section>
-
-        <section class="zone zone-pre_footer">
-            {% nglayouts_render_zone 'pre_footer' %}
-        </section>
-
-        <section class="zone zone-footer">
-            {% nglayouts_render_zone 'footer' %}
-        </section>
+<div class="row">
+    <div class="col-md-4">
+        <div data-zone="main_menu"></div>
+    </div>
+    <div class="col-md-8">
+        <div data-zone="header"></div>
+    </div>
+    <div class="col-md-12">
+        <div data-zone="post_header"></div>
     </div>
 </div>
-{% endblock %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div data-zone="main"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div data-zone="pre_footer"></div>
+        <div data-zone="footer"></div>
+    </div>
+</div>
