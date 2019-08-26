@@ -39,12 +39,16 @@
         position: absolute;
         z-index: 3;
         bottom: 1.75rem;
-        left: 2rem;
-        right: 2rem;
+        top: 2rem;
         color: $white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
     }
     .title {
-        font-size: 1.3125rem;
+        font-size: 2.125rem;
         margin: 0 0 .25rem;
         line-height: 1.25;
         display: -webkit-box;
@@ -93,18 +97,16 @@
     @include media-breakpoint-down(lg) {
         .article-header {
             bottom: 1.25rem;
-            left: 1.5rem;
-            right: 1.5rem;
+            top: 1.25rem;
         }
         .title {
-            font-size: 1.25rem;
+            font-size: 2rem;
         }
     }
     @include media-breakpoint-down(sm) {
         .article-header {
+            top: 1rem;
             bottom: 1rem;
-            left: 1.25rem;
-            right: 1.25rem;
         }
         .title {
             -webkit-line-clamp: 3;
